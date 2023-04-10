@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const uri = "mongodb+srv://koder:koder@sales.wkapo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const connection = mongoose.connection;
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Origin", "https://sales-koderx.netlify.app/");
     res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
     if (req.method == "OPTIONS") {
         return res.sendStatus(200);
