@@ -3,9 +3,9 @@ const bodyParser =  require('body-parser');
 const app  =  express();
 const cors = require('cors')
 const mongoose = require('mongoose');
+const PORT = process.env.PORT || 8000
 
 app.use(express.json());
-const port =  8000;
 app.use(bodyParser.json())
 const uri = "mongodb+srv://koder:koder@sales.wkapo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const connection = mongoose.connection;
@@ -98,6 +98,6 @@ connection.once('open',()=>{
 
 
 });*/
-    app.listen(port, () => {
-    console.log(`Server on port ${port}`);
+    app.listen(PORT, () => {
+    console.log(`Server on port ${PORT}`);
 });
