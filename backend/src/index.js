@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8000
 
 app.use(express.json());
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 const uri = "mongodb+srv://koder:koder@sales.wkapo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const connection = mongoose.connection;
 app.use('/products', require('./routes/products.js'));
