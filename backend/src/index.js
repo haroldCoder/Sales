@@ -5,7 +5,7 @@ const bodyParser =  require('body-parser');
 const app  =  express();
 const cors = require('cors')
 const mongoose = require('mongoose');
-app.use(cors({origin: ['http://localhost:3000']}));
+
 app.use(express.json());
 const url = 'mongodb+srv://manuel:12345@702.s3tgn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const port =  8000;
@@ -17,6 +17,7 @@ const connection = mongoose.connection;
 app.use('/products', require('./routes/products.js'));
 app.use('/users', require('./routes/users.js'));
 require('dotenv').config();
+app.use(cors());
 
 mongoose.connect(uri,{
 	useNewUrlParser: true,
