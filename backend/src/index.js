@@ -4,11 +4,11 @@ const app  =  express();
 const cors = require('cors')
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 8000
-
+app.use(cors())
 app.use(express.json());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors())
+
 const uri = "mongodb+srv://koder:koder@sales.wkapo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const connection = mongoose.connection;
 app.use((req, res, next) => {
