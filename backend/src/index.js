@@ -13,7 +13,7 @@ app.use('/products', require('./routes/products.js'));
 app.use('/users', require('./routes/users.js'));
 require('dotenv').config();
 app.use(cors({
-    origin: 'https://sales-koderx.netlify.app'
+    origin: '*'
 }));
 
 mongoose.connect(uri,{
@@ -22,7 +22,7 @@ mongoose.connect(uri,{
 });
 
 app.use((req, res, next) => {
-    const allowedOrigins = ['https://sales-koderx.netlify.app'];
+    const allowedOrigins = ['*'];
     const origin = req.headers.origin;
   
     if (allowedOrigins.includes(origin)) {
