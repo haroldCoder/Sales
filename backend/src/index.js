@@ -12,27 +12,13 @@ const connection = mongoose.connection;
 app.use('/products', require('./routes/products.js'));
 app.use('/users', require('./routes/users.js'));
 require('dotenv').config();
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors());
 
 mongoose.connect(uri,{
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });
 
-app.use((req, res, next) => {
-    const allowedOrigins = ['*'];
-    const origin = req.headers.origin;
-  
-    if (allowedOrigins.includes(origin)) {
-      res.setHeader('Access-Control-Allow-Origin', origin);
-    }
-  
-    // otros encabezados y middleware
-  
-    next();
-});
 
 connection.once('open',()=>{
     console.log('db is connected');
