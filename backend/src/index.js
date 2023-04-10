@@ -12,14 +12,27 @@ const connection = mongoose.connection;
 app.use('/products', require('./routes/products.js'));
 app.use('/users', require('./routes/users.js'));
 require('dotenv').config();
-app.use(cors());
+app.use(cors({
+    origin: 'https://sales-koderx.netlify.app'
+}));
 
 mongoose.connect(uri,{
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });
 
-
+app.use((req, res, next) => {
+    const allowedOrigins = ['https://sales-koderx.netlify.app'];
+    const origin = req.headers.origin;
+  
+    if (allowedOrigins.includes(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+  
+    // otros encabezados y middleware
+  
+    next();
+});
 
 connection.once('open',()=>{
     console.log('db is connected');

@@ -30,7 +30,7 @@ export class Home extends Component{
 		data: []
 	}
 	getData = async() =>{
-		const res = await axios.get('http://localhost:8000/products');
+		const res = await axios.get("https://sales-production.up.railway.app/products");
 		this.setState({data: res.data});
 	}
 	render(){
