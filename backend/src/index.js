@@ -1,17 +1,12 @@
 const express = require('express');
-const logger =  require('morgan');
-const mongodb = require('mongodb'); 
 const bodyParser =  require('body-parser');
 const app  =  express();
 const cors = require('cors')
 const mongoose = require('mongoose');
 
 app.use(express.json());
-const url = 'mongodb+srv://manuel:12345@702.s3tgn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const port =  8000;
 app.use(bodyParser.json())
-const Stripe = require('stripe');
-const products = require('./models/products.js');
 const uri = "mongodb+srv://koder:koder@sales.wkapo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const connection = mongoose.connection;
 app.use('/products', require('./routes/products.js'));
