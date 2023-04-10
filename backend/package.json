@@ -25,11 +25,5 @@
     "whatwg": "^2.0.0",
     "whatwg-url": "^11.0.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.17.5",
-    "@babel/node": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "babel-loader": "^8.2.3",
-    "nodemon": "^2.0.15"
-  }
+
 }
