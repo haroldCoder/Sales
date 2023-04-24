@@ -31,9 +31,7 @@ export default class Beginning extends Component{
 		}
 	   else{
 		 return(
-			 <div>
-			   <App/>
-			 </div>
+			<App/>
 		 )
 	   }
 	}

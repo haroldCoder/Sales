@@ -69,7 +69,6 @@ class Card extends Component{
 		);
 	}
 	Style = () =>{     
-		$(".card").css("height","82vh");  
 		$(".text").css("height","15%");
 		$(".card-body > img").css("width","auto");
 		$(".card-body > img").css("height","40%");
