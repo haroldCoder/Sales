@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import $ from 'jquery';
 import instagram from '../img/intagram.png';
 
-export class About extends Component{
-	constructor(props){
+export class About extends Component {
+	constructor(props) {
 		super(props);
 		this.social = [
 			{
@@ -48,52 +48,52 @@ export class About extends Component{
 			}
 		];
 	}
-	componentDidMount(){
+	componentDidMount() {
 		this.Style()
 	}
-	panel = () =>{
-		return(
+	panel = () => {
+		return (
 			<div className="container">
 				<div className="row part">
-					{
-						this.social.map(e=>(
+					{this.social.map(e => (
 						<div className="col-lg-4 d-flex card">
 							<div className="img">
-								<img src={e.icon} class="covers"/>
+								<img src={e.icon} alt={e.name} className="covers" />
 							</div>
 							<section className="info">
 								<div className="title">
 									<h1>{e.name}</h1>
 								</div>
-								<a href={e.link} target="_blank">{e.link}</a>
+								<a href={e.link} target="_blank" rel="noopener noreferrer">
+									{e.link}
+								</a>
 							</section>
-					   </div>
-					   ))
-					}
+						</div>
+					))}
 				</div>
 			</div>
 		);
 	}
-	render(){
-		return(
-			<this.panel/>
+	render() {
+		return (
+			<this.panel />
 		);
 	}
-	Style = () =>{
-		$("body").css("background","#d9e3f1");
-		$(".covers").css("width","90%");
-		$(".covers").css("height","90%");
-		$(".row > .card").css("flex-flow","row");
-		$(".row > .card").css("width","46%");
-		$(".row > .card").css("height","14vh");
-		$(".row > .card").css("margin","2% 2% 1% 2%");
-		$(".row > .card").css("background","#001");
-		$(".row > .card > .img").css("width","23%");
-		$(".row > .card > .img").css("padding","2% 0%");
-		$(".row > .card > .img > img").css("border-radius","5%");
-		$(".row > .card > .img > img").css("height","100%");
-		$(".row > .card > .img").css("border-right","3px solid #CCC");
-		$(".row > .card > .info").css("margin","0 2%");
-		$(".row > .card > .info").css("width","80%")
+	Style = () => {
+		$("body").css("background", "#d9e3f1");
+		$(".covers").css("width", "90%");
+		$(".covers").css("height", "90%");
+		$(".row > .card").css("flex-flow", "row");
+		$(".row > .card").css("width", "46%");
+		$(".row > .card").css("height", "14vh");
+		$(".row > .card").css("margin", "2% 2% 1% 2%");
+		$(".row > .card").css("background", "#001");
+		$(".row > .card > .img").css("width", "23%");
+		$(".row > .card > .img").css("padding", "2% 0%");
+		$(".row > .card > .img > img").css("border-radius", "5%");
+		$(".row > .card > .img > img").css("height", "100%");
+		$(".row > .card > .img").css("border-right", "3px solid #CCC");
+		$(".row > .card > .info").css("margin", "0 2%");
+		$(".row > .card > .info").css("width", "80%")
 	}
 }
