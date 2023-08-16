@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM, { render } from 'react-dom';
-import $ from 'jquery';
 import axios from 'axios';
 import Card from '../layout/card.js'
 import Positioning from './positioning.js';

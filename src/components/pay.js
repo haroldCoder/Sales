@@ -10,7 +10,6 @@ import {
 import { PayPalButton } from "react-paypal-button-v2";
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import EditAdvance from './editAdvance.js';
 import $ from 'jquery'; 
 import { toast, Toaster } from 'react-hot-toast';
 const cookie = new Cookies();

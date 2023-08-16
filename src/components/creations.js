@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import ReactDOM, { render } from 'react-dom';
 import $ from 'jquery';
 import Cookies from 'universal-cookie';
 import found from '../img/not found.png';
 import axios from 'axios';
 import Card from '../layout/card.js';
 import Access from '../layout/access';
-import { isThisTypeNode } from 'typescript';
 
 export class Creations extends Component{
 	constructor(props){

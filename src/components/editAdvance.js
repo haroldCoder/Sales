@@ -1,12 +1,6 @@
 import React, {Component, useState} from 'react';
-import ReactDOM, { render } from 'react-dom';
 import $ from 'jquery';
-import masterCard from '../img/mastercard.jpg';
-import paypal from '../img/paypal.png';
-import nequi from '../img/nequi.jpg';
-import efecty from '../img/Efecty.jpg';
 import axios from 'axios';
-import Pay from './pay.js';
 import Cookies from 'universal-cookie';
 
 export default class EditAdvance extends Component {

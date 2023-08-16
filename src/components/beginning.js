@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import fire from '../img/fire.png';
-import $ from 'jquery';
 import App from '../App';
-import Access from '../layout/access';
 
 export default class Beginning extends Component{
 	state = {

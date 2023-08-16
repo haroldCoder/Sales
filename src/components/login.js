@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
