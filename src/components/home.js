@@ -3,13 +3,12 @@ import ReactDOM, { render } from 'react-dom';
 import $ from 'jquery';
 import koder2 from '../img/koder2.png';
 import '@fortawesome/fontawesome-free';
-import Access from '../layout/access.js';
 import Cookies from 'universal-cookie';
 import Create from './products.create';
-import axios from 'axios';
 import Card from '../layout/card.js';
 import Positioning from './positioning';
 import { Link } from 'react-router-dom';
+import { supabase } from '../supabase/client';
 
 export class Home extends Component{
 	constructor(props) {
@@ -30,7 +29,7 @@ export class Home extends Component{
 		data: []
 	}
 	getData = async() =>{
-		const res = await axios.get("https://sales-koderx.up.railway.app/products");
+		const res = await supabase.from("Sales").select()
 		this.setState({data: res.data});
 	}
 	render(){
@@ -111,14 +110,6 @@ export class Home extends Component{
 		$(".login").css("position","absolute");
 		$(".login").css("left","37%");
 		$(".login").css("top","20%");
-	if(this.cookies.get("name") == undefined && this.cookies.get("email") == undefined){
-		return(
-			ReactDOM.render(
-			<Access/>, document.querySelector(".login")
-			)
-		)
-	}
-	else{
 		$(".login").css("top","10%");
 		$(".login").css("left","8%");
 		return(
@@ -127,6 +118,5 @@ export class Home extends Component{
 			document.querySelector(".login")
 			)
 		)
-	}
 	}
 }
